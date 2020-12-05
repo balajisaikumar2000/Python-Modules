@@ -1,0 +1,24 @@
+But soft what light through yonder window breaks
+It is the east and Juliet is the sun
+Arise fair sun and kill the envious moon
+Who is already sick and pale with grief
+
+
+
+file = "romeo.txt"
+fopn = open(file)
+dct ={}
+for line in fopn:
+    words = line.split()
+    for i in  words:
+        dct[i] = dct.get(i,0) + 1
+print(dct)
+lst = []
+for k,v in dct.items():
+    couple =(k,v)
+    lst.append(couple)
+print(lst)
+lst = sorted(lst,reverse=True)
+print(lst)
+for key,val in lst[:10]:
+    print(val,key)
